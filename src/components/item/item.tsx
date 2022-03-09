@@ -37,7 +37,8 @@ export const Item = component$(
                 inputEl.selectionStart = inputEl.selectionEnd = inputEl.value.length;
               }}
             >
-              {props.item.title}
+                <span>{props.item.title}</span>
+                <small class="badge">{props.item.type}</small>
             </label>
             <button class="destroy" on$:click={() => removeItem(props.todos, props.item)}></button>
           </div>

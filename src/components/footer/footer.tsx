@@ -20,13 +20,25 @@ export const Footer = component$(
        */
       function Filter({ filter }: { filter: FilterStates }) {
         const lMode = filter.toLowerCase();
+        var fString = filter[0].toUpperCase() + filter.substr(1);
+        switch (fString) {
+            case 'All':
+                fString = 'Todos'
+                break;
+            case 'Active':
+                fString = 'Ativos'
+                break;
+            case 'Completed':
+                fString = 'Concluídos'
+                break;
+        }
         return (
           <li>
             <a
               class={{ selected: props.todos.filter == lMode }}
               on$:click={() => updateFilter(props.todos, filter)}
             >
-              {filter[0].toUpperCase() + filter.substr(1)}
+                {fString}
             </a>
           </li>
         );
@@ -38,7 +50,7 @@ export const Footer = component$(
             <>
               <span class="todo-count">
                 <strong>{remaining}</strong>
-                {remaining == 1 ? ' item' : ' items'} left
+                {remaining == 1 ? ' item' : ' itens'} restantes
               </span>
               <ul class="filters">
                 {FilterStates.map((f) => (
@@ -47,7 +59,7 @@ export const Footer = component$(
               </ul>
               {remaining > 0 ? (
                 <button class="clear-completed" on$:click={() => clearCompleted(props.todos)}>
-                  Clear completed
+                  Limpar concluidos
                 </button>
               ) : null}
             </>

@@ -12,10 +12,11 @@ export const Header = component$(
     return $(() => {
       return (
         <>
-          <h1>todos</h1>
+          <h1>ToDo</h1>
+            <div class="input-wrapper">
           <input
             class="new-todo"
-            placeholder="What needs to be done?"
+            placeholder="O que precisa ser feito?"
             autoFocus
             value={state.text}
             on$:keyup={() => {
@@ -23,11 +24,14 @@ export const Header = component$(
               const inputValue = (event.target as HTMLInputElement).value;
               state.text = inputValue;
               if (event.key === 'Enter' && inputValue) {
-                addItem(props.todos, state.text);
+                addItem(props.todos, state.text, 'hábito');
                 state.text = '';
               }
             }}
           />
+            <button type="button" on$:click={() => console.log('tarefa')}>Tarefa</button>
+            <button type="button" on$:click={() => console.log('hábito')}>Hábito</button>
+            </div>
         </>
       );
     });

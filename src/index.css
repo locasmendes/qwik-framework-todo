@@ -214,6 +214,8 @@ body {
   transition: color 0.4s;
   font-weight: 400;
   color: #4d4d4d;
+  display: flex;
+  flex-direction: column;
 }
 
 .todo-list li.completed label {
@@ -348,6 +350,27 @@ html .clear-completed:active {
 
 .info a:hover {
   text-decoration: underline;
+}
+
+.badge{
+  border: thin solid;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  width: fit-content;
+}
+
+.input-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.input-wrapper button{
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+  border: thin solid gray;
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 /*

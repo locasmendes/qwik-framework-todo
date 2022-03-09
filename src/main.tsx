@@ -10,9 +10,9 @@ import './index.css';
 export const todos: Todos = {
   filter: 'all',
   items: [
-    { completed: false, title: 'Read Qwik docs' },
-    { completed: false, title: 'Build HelloWorld' },
-    { completed: false, title: 'Profit' },
+    { completed: false, type: 'Tarefa', title: 'Ler a documentação do Qwik' },
+    { completed: false, type: 'Hábito', title: 'Implementar um HelloWorld' },
+    { completed: false, type: 'Tarefa', title: 'Profit' },
   ],
 };
 

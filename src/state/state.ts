@@ -5,6 +5,7 @@
 export interface TodoItem {
   completed: boolean;
   title: string;
+  type: string;
 }
 
 export interface Todos {
@@ -16,8 +17,8 @@ export interface Todos {
 // Todo Application State Mutation Functions
 ////////////////////////////////////////////////////////////////////////
 
-export function addItem(todos: Todos, text: string) {
-  todos.items.push({ completed: false, title: text });
+export function addItem(todos: Todos, text: string, type: string) {
+  todos.items.push({ completed: false, title: text , type: type});
   updateFilter(todos);
 }
 
