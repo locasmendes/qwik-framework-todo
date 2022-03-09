@@ -358,6 +358,20 @@ html .clear-completed:active {
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   font-size: 0.75rem;
   width: fit-content;
+  margin-right: 1rem;
+}
+
+.tomato {
+
+}
+
+.habito{
+  background-color: #e8fbff;
+
+}
+
+.tarefa{
+  background-color: antiquewhite;
 }
 
 .input-wrapper{

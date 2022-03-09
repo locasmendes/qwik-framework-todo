@@ -23,14 +23,10 @@ export const Header = component$(
               const event = useEvent<KeyboardEvent>();
               const inputValue = (event.target as HTMLInputElement).value;
               state.text = inputValue;
-              if (event.key === 'Enter' && inputValue) {
-                addItem(props.todos, state.text, 'hábito');
-                state.text = '';
-              }
             }}
           />
-            <button type="button" on$:click={() => console.log('tarefa')}>Tarefa</button>
-            <button type="button" on$:click={() => console.log('hábito')}>Hábito</button>
+            <button type="button" on$:click={() => addItem(props.todos, state.text, 'Tarefa')}>Tarefa</button>
+            <button type="button" on$:click={() => addItem(props.todos, state.text, 'Hábito')}>Hábito</button>
             </div>
         </>
       );

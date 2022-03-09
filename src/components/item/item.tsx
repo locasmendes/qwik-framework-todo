@@ -38,7 +38,10 @@ export const Item = component$(
               }}
             >
                 <span>{props.item.title}</span>
-                <small class="badge">{props.item.type}</small>
+                <div>
+                    <small class={"badge " + props.item.type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase()}>{props.item.type}</small>
+                    {props.item.completed ? (<small>{props.item.timeCost} <span class="tomato">tomates</span></small>) : null }
+                </div>
             </label>
             <button class="destroy" on$:click={() => removeItem(props.todos, props.item)}></button>
           </div>

@@ -2,10 +2,12 @@
 // Todo Application State Interfaces
 ////////////////////////////////////////////////////////////////////////
 
+import {createStore} from "@builder.io/qwik";
 export interface TodoItem {
   completed: boolean;
   title: string;
   type: string;
+  timeCost: number;
 }
 
 export interface Todos {
@@ -13,12 +15,24 @@ export interface Todos {
   items: TodoItem[];
 }
 
+export function openMyDialog() {
+  let myDialog:any = <any>document.getElementById("myModal");
+  myDialog.style.display = 'block';
+  myDialog.style.zIndex = 3;
+}
+
+export function closeMyDialog() {
+  let myDialog:any = <any>document.getElementById("myModal");
+  myDialog.style.display = 'none';
+  myDialog.style.zIndex = 0;
+}
+
 ////////////////////////////////////////////////////////////////////////
 // Todo Application State Mutation Functions
 ////////////////////////////////////////////////////////////////////////
 
 export function addItem(todos: Todos, text: string, type: string) {
-  todos.items.push({ completed: false, title: text , type: type});
+  todos.items.push({ completed: false, title: text , type: type, timeCost: 0});
   updateFilter(todos);
 }
 
@@ -27,8 +41,16 @@ export function removeItem(todos: Todos, todoItem: TodoItem) {
   updateFilter(todos);
 }
 export function toggleItem(todos: Todos, todoItem: TodoItem) {
-  todoItem.completed = !todoItem.completed;
-  updateFilter(todos);
+  if(todoItem.completed === false){
+    todoItem.completed = !todoItem.completed;
+  } else {
+    todoItem.completed = !todoItem.completed;
+    updateFilter(todos);
+  }
+}
+
+export function saveItem(timeCost: string) {
+console.log(timeCost)
 }
 
 export function clearCompleted(todos: Todos) {
