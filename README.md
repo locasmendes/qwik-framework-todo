@@ -1,8 +1,10 @@
 # qwik-app
 
-- Qwik implementation of TodoMVC: https://todomvc.com/.
-- Vite.js tooling.
-- Express.js server.
+Extensão para pomodoro de um aplicativo originalmente para ToDo
+
+- Implementação utilizando Qwik do TodoMVC: https://todomvc.com/.
+- Vite.js.
+- Express.js.
 
 ## Development
 
@@ -24,7 +26,7 @@ npm run dev
 npm run build
 ```
 
-## Related
+## Relacionado
 
 - [Qwik Github](https://github.com/BuilderIO/qwik)
 - [@QwikDev](https://twitter.com/QwikDev)
